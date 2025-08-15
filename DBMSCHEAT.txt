@@ -1,0 +1,85 @@
+
+
+CREATE DATABASE ThagakadeJavaFX;
+
+USE ThagakadeJavaFX;
+
+CREATE TABLE Customer(
+	custId VARCHAR(6) Primary key,
+	custTitle VARCHAR(4),
+	custName VARCHAR(75),
+	custSalary double(10,2),
+	custAddress VARCHAR(50),
+	custCity VARCHAR(20),
+	custProvince VARCHAR(25),
+	custPostalCode VARCHAR(18),
+	custDoB Date
+	
+);
+
+INSERT INTO Customer  VALUES (
+    'C001',
+    'Mr.',
+    'John Doe',
+    55000.50,
+    '123 Main St',
+    'Colombo',
+    'Western',
+    '10000',
+    '1985-05-15'
+);
+
+INSERT INTO Customer VALUES (
+    'C002',
+    'Ms.',
+    'Jane Smith',
+    68500.75,
+    '456 Ocean View Rd',
+    'Kandy',
+    'Central',
+    '20000',
+    '1992-11-22'
+);
+
+INSERT INTO Customer VALUES (
+    'C003',
+    'Mr.',
+    'Peter Jones',
+    42000.00,
+    '789 Mountain Lane',
+    'Galle',
+    'Southern',
+    '80000',
+    '1978-08-01'
+);
+
+INSERT INTO Customer VALUES (
+    'C004',
+    'Dr.',
+    'Saman Perera',
+    95000.25,
+    '101 Hospital Road',
+    'Jaffna',
+    'Northern',
+    '40000',
+    '1965-03-09'
+);
+//-------------
+
+USE ThagakadeJavaFX;
+
+CREATE TABLE Item(
+	itemCode VARCHAR(6) PRIMARY KEY,
+	description VARCHAR(60),
+	packageSize VARCHAR(20),
+	unitPrice DECIMAL(10,2),
+	quantityOnHand INT
+);
+
+
+
+INSERT INTO Item VALUES ('S001', 'White Sugar', '1kg', 180.50, 25);
+INSERT INTO Item VALUES ('S002', 'Brown Sugar', '1kg', 200.00, 30);
+INSERT INTO Item VALUES ('S003', 'Icing Sugar', '500g', 150.00, 15);
+INSERT INTO Item VALUES ('S004', 'Sugar Cubes', '500g', 175.00, 10);
+INSERT INTO Item VALUES ('S005', 'Jaggery', '500g', 350.00, 20);

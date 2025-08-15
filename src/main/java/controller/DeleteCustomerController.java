@@ -73,7 +73,8 @@ public class DeleteCustomerController implements Initializable {
             String sql = "DELETE FROM customer WHERE custId=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setObject(1, customerID );
-            ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
+            resetAllInfo();
             JOptionPane.showMessageDialog(null,"Deleted SuccessFully!!!");
 
 
@@ -177,6 +178,18 @@ public class DeleteCustomerController implements Initializable {
     }
     private void loadCustTitles() {
         cmdCustomerTitle.getItems().addAll("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.");
+    }
+    private void resetAllInfo(){
+        txtCustomerId.setText("");
+        cmdCustomerTitle.setValue(null);
+        doBBirthday.setValue(null);
+        txtCustomerName.setText("");
+        txtCustomerAddress.setText("");
+        txtCustomerCity.setText("");
+        txtCustomerSalary.setText("");
+        txtCustomerProvince.setText("");
+        txtCustomerPostalCode.setText("");
+
     }
 
 }

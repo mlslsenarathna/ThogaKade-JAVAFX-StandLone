@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+   <children>
+      <Label layoutX="82.0" layoutY="23.0" prefHeight="54.0" prefWidth="454.0" text="ThogaKade --JAVAFX(StandLone)" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="454.0" layoutY="365.0" prefHeight="34.0" prefWidth="145.0" text="MLSLSenarathna" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAddCustomer" layoutX="74.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnAddCustomer" text="Add Customer " textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAddItem" layoutX="363.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnAddItem" text="Add Item" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdateCustomer" layoutX="24.0" layoutY="170.0" mnemonicParsing="false" onAction="#btnUpdateCustomer" text="Update Customer Details" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdateItemDetails" layoutX="317.0" layoutY="170.0" mnemonicParsing="false" onAction="#btnUpdateItemDetails" text="Update Item Details" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDeleteCustomer" layoutX="33.0" layoutY="230.0" mnemonicParsing="false" onAction="#btnDeleteCustomer" text="Delete Customer Details" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDeleteItem" layoutX="320.0" layoutY="230.0" mnemonicParsing="false" onAction="#btnDeleteItem" text="Delete Item Details" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVeiwCustomerDetails" layoutX="48.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnVeiwCustomerDetails" text="Veiw All Customers" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVeiwItemDetails" layoutX="355.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnVeiwItemDetails" text="Veiw Items" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnExit" layoutX="244.0" layoutY="346.0" mnemonicParsing="false" onAction="#btnExit" text="Exit" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

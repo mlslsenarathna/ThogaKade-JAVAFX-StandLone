@@ -184,8 +184,6 @@ public class UpdateCustomerController implements Initializable {
             Double customerSalary = Double.valueOf(txtCustomerSalary.getText());
             LocalDate customerDob = doBBirthday.getValue();
 
-            Customer customer = new Customer(customerID, customerTitle, customerName, customerDob, customerSalary, customerAddress, customerCity, customerProvince, customerPostalCode);
-            System.out.println(customer.getAddress());
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/ThagakadeJavaFX", "root", "1234");
             String SQL = "UPDATE customer SET custTitle=?, custName=?, custSalary=?, custAddress=?, custCity=?, custProvince=?, custPostalCode=?, custDoB=? WHERE custId = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
@@ -199,25 +197,13 @@ public class UpdateCustomerController implements Initializable {
             preparedStatement.setString(7, customerPostalCode);
             preparedStatement.setDate(8, Date.valueOf(customerDob));
             preparedStatement.setString(9, customerID);
-
             preparedStatement.executeUpdate();
-
-
-
         }catch (SQLException e){
-
         }
-
-
-
-
-
     }
     private void loadCustTitles() {
         cmdCustomerTitle.getItems().addAll("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.");
     }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadCustTitles();

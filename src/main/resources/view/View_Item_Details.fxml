@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="439.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewItemController">
+   <children>
+      <Label layoutX="205.0" layoutY="22.0" prefHeight="54.0" prefWidth="155.0" text="Items Details" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBack" layoutX="250.0" layoutY="375.0" mnemonicParsing="false" onAction="#btnBack" text="Back" textFill="#0c8896">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblItemInfo" layoutX="8.0" layoutY="76.0" prefHeight="284.0" prefWidth="585.0">
+         <columns>
+            <TableColumn fx:id="colItemId" prefWidth="88.00006103515625" text="Item-Code" />
+            <TableColumn fx:id="colDescription" prefWidth="131.20001220703125" text="Description" />
+            <TableColumn fx:id="colPackageSize" prefWidth="119.20001220703125" text="Package Size" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="121.5999755859375" text="UnitPrice" />
+            <TableColumn fx:id="colQuantityOnHand" prefWidth="124.79998779296875" text="Quantity On hand" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

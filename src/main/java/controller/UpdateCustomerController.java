@@ -173,14 +173,44 @@ public class UpdateCustomerController implements Initializable {
 
     @FXML
     void btnSet(ActionEvent event) {
+        try {
+            String customerID = txtCustomerId.getText();
+            String customerTitle = cmdCustomerTitle.getValue();
+            String customerName = txtCustomerName.getText();
+            String customerAddress = txtCustomerAddress.getText();
+            String customerCity = txtCustomerCity.getText();
+            String customerProvince = txtCustomerProvince.getText();
+            String customerPostalCode = txtCustomerPostalCode.getText();
+            Double customerSalary = Double.valueOf(txtCustomerSalary.getText());
+            LocalDate customerDob = doBBirthday.getValue();
 
-        String customerAddress=txtCustomerAddress.getText();
-        String customerCity=txtCustomerCity.getText();
-        String customerProvince=txtCustomerProvince.getText();
-        String customerPostalCode=txtCustomerPostalCode.getText();
-        String customerSalary=txtCustomerSalary.getText();
-        LocalDate customerDob= doBBirthday.getValue();
-        String customerName=txtCustomerName.getText();
+            Customer customer = new Customer(customerID, customerTitle, customerName, customerDob, customerSalary, customerAddress, customerCity, customerProvince, customerPostalCode);
+            System.out.println(customer.getAddress());
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/ThagakadeJavaFX", "root", "1234");
+            String SQL = "UPDATE customer SET custTitle=?, custName=?, custSalary=?, custAddress=?, custCity=?, custProvince=?, custPostalCode=?, custDoB=? WHERE custId = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, customerTitle);
+            preparedStatement.setString(2, customerName);
+            preparedStatement.setDouble(3, customerSalary);
+            preparedStatement.setString(4, customerAddress);
+            preparedStatement.setString(5, customerCity);
+            preparedStatement.setString(6, customerProvince);
+            preparedStatement.setString(7, customerPostalCode);
+            preparedStatement.setDate(8, Date.valueOf(customerDob));
+            preparedStatement.setString(9, customerID);
+
+            preparedStatement.executeUpdate();
+
+
+
+        }catch (SQLException e){
+
+        }
+
+
+
+
 
     }
     private void loadCustTitles() {

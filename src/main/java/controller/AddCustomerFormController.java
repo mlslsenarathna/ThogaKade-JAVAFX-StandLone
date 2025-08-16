@@ -1,7 +1,7 @@
 
 package controller;
 
-import com.mysql.cj.protocol.Resultset;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,13 +9,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.dto.Customer;
 
 import javax.swing.*;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.Month;
 import java.util.ResourceBundle;
 
 public class AddCustomerFormController implements Initializable {
@@ -55,6 +55,7 @@ public class AddCustomerFormController implements Initializable {
     @FXML
     private TextField txtCustomerSalary;
 
+    private static Stage stage;
     @FXML
     void btnBack(ActionEvent event) {
 

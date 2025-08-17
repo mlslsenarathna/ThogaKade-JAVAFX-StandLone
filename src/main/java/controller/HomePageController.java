@@ -13,14 +13,7 @@ import java.io.IOException;
 
 
 public class HomePageController  {
-    private Stage addCustomerStage=new Stage();
-    private Stage updateCustomerStage=new Stage();
-    private Stage deleteCustomerStage=new Stage();
-    private Stage veiwCustomerStage=new Stage();
-    private Stage addItemStage=new Stage();
-    private Stage updateItemStage=new Stage();
-    private Stage deleteItemStage=new Stage();
-    private Stage veiwItemStage=new Stage();
+
 
     @FXML
     private Button btnAddCustomer;

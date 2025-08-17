@@ -4,7 +4,9 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -13,12 +15,14 @@ import javafx.stage.Stage;
 import model.dto.Customer;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AddCustomerFormController implements Initializable {
+    private Stage stage=new Stage();
 
     @FXML
     private Button btnBack;
@@ -55,9 +59,15 @@ public class AddCustomerFormController implements Initializable {
     @FXML
     private TextField txtCustomerSalary;
 
-    private static Stage stage;
     @FXML
     void btnBack(ActionEvent event) {
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Home_Page_Form.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -136,6 +146,7 @@ public class AddCustomerFormController implements Initializable {
         txtCustomerSalary.setText("");
         txtCustomerProvince.setText("");
         txtCustomerPostalCode.setText("");
+        cmdCustomerTitle.setValue(null);
     }
 
     private void loadCustTitles() {
